@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="index">
+
+{% if events %}
+<h2>Events Board</h2>
+<div class="item">
+
+<table class="table table-bordered">
+	<tr>
+		<th>Event name</th>
+		<th>Event description</th>
+		<th>Date Event will be held</th>
+		<th>Date Event will end</th>
+		<th>Event organized by</th>
+	</tr>
+	{% for event in events %}
+	<tr>
+		<td><a href="/events/{{ event.slug }}">{{event.name}}</a></td>
+		<td>{{event.description}}</td>
+		<td>{{event.start_date}}</td>
+		<td>{{event.end_date}}</td>
+		<td>{{event.organizer}}</td>
+	</tr>
+	{% endfor %}
+</table>
+</div>
+{% else %}
+{{blank_query }}
+{% endif %}
+</div>
+{% endblock %}

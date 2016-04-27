@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form class="login" method="POST" action="{% url 'register'%}">
+	{% csrf_token %}
+	<h2>Sign Up</h2>
+	<hr>
+	{{user_form.as_p }}
+	<button id="auth-btn" type="submit" value="Register" class="btn btn-info">Register</button>
+</form>
+{% endblock %}

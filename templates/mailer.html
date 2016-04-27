@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="sendmail">
+<h2>Send Mail Invite</h2>
+<div class="mail-ctrl"></div>
+<div class="mail">
+<form method="post" action="">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-info">Send Invite</button>
+</form>
+</div>
+</div>
+{% endblock %}

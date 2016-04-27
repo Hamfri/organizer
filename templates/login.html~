@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form class="login" role="form" method="POST" action="{% url 'login' %}">
+	{% csrf_token %}
+
+  <div class="form-group">
+  	<label for="username">Username</label>
+  		<input type="text" name="username" value="" size="50" class="form-control" id="username"></input>
+  </div>
+
+  <div class="form-group">
+  	<label for="password">Password</label>
+  		<input type="password" name="password" value="" size="50" class="form-control" id="password"></input>
+  </div>
+
+    <input id="auth-btn" class="btn btn-info btn-block" type="submit" value="submit" />
+</form>
+{% endblock %}

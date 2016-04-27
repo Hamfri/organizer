@@ -1,0 +1,30 @@
+{% extends 'accounts_base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'register'%}">
+	{% csrf_token %}
+	<div class="register">
+	<div class="inner">
+	<h2>Signup to access E-organizer</h2>
+	<div class="fieldWrapper">
+		{{user_form.username.errors}}
+		<label for="{{user_form.username.id_for_label}}">Username</label>
+		{{user_form.username}}
+	</div>
+
+	<div class="fieldWrapper">
+		{{user_form.email.errors}}
+		<label for="{{user_form.email.id_for_label}}">Email</label>
+		{{user_form.email}}
+	</div>
+
+	<div class="pass2">
+		{{user_form.password.errors}}
+		<label for="{{user_form.password.id_for_label}}">Password</label>
+		{{user_form.password}}
+	</div>
+	<button type="submit" value="signup" class="btn btn-info">Signup</button>
+	</div>
+	</div>
+</form>
+{% endblock %}

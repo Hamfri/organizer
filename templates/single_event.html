@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="single_event">
+	<h3>{{ single_event.name }}</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>This occasion will be held at</th>
+			<th>What will happen at the event</th>
+			<th>Event was organized by</th>
+			<th>Start date</th>
+			<th>End date</th>
+		</tr>
+		<tr>
+		<td>{{single_event.venue}}</td>
+		<td>{{single_event.description}}</td>
+		<td>{{single_event.organizer}}</td>
+		<td>{{single_event.start_date}}</td>
+		<td>{{single_event.end_date}}</td>
+		</tr>
+	</table>
+</div>
+{% endblock %}
